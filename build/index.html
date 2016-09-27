@@ -12,7 +12,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<script type="text/javascript" src="js/main.js"></script>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 	<header class="page-header container">
@@ -26,13 +26,24 @@
 	<footer class="container">
 		<p class="small text-muted">Created by Pavel Shchegolev, 2016
 	</footer>
-
 	<script id="t-me" type="text/template">
-		
+		<div class="avatar" style="background-image: url(<%-avatar%>);"></div>
+		<h2><%-firstName%> <%-lastName%></h2>
+		<p><%-profession%></p>
+		<ul class="contacts"></ul>
 	</script>
-
+	<script id="t-me-contacts-item" type="text/template">
+		<a href="<%-url%>">
+			<span class="fly">
+				<i class="glyphicon glyphicon-<%-icon%>"></i>
+				<span class="text"><%-url%></span>
+			</span>
+			<span class="text"><%-title%></span>
+		</a>
+	</script>
 	<script id="t-root" type="text/template">
-		<div class="row">
+		<div class="about col-sm-3"></div>
+		<div class="row col-sm-9">
 			<div class="users col-sm-3"></div>
 			<div class="orders col-sm-3"></div>
 		</div>
