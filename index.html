@@ -19,7 +19,11 @@
 	var OneSignal = window.OneSignal || [];
 		OneSignal.push(["init", {
 		  appId: "6f301423-e603-423e-b148-011e2eadd47c",
-		  autoRegister: false,
+		  autoRegister: true,
+			subdomainName: 'carduelis',
+			httpPermissionRequest: {
+        enable: true
+      },
 		  notifyButton: {
 		    enable: true /* Set to false to hide */
 		  }
@@ -33,14 +37,14 @@
 		<!-- <p class="lead">Resolves an inconvenience in case of group ordering food -->
 	</header>
 	<section id="app" class="container">
-		
+
 	</section>
 	<footer class="container">
 		<p class="small text-muted">Created by Pavel Shchegolev, 2016
 	</footer>
 
 	<script id="t-me" type="text/template">
-		
+
 	</script>
 
 	<script id="t-root" type="text/template">
