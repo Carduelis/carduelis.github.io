@@ -13,6 +13,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<script type="text/javascript" src="js/main.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="manifest" href="/manifest.json">
+	<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+	<script>
+	var OneSignal = window.OneSignal || [];
+		OneSignal.push(["init", {
+		  appId: "6f301423-e603-423e-b148-011e2eadd47c",
+		  autoRegister: false,
+		  notifyButton: {
+		    enable: true /* Set to false to hide */
+		  }
+		}]);
+	</script>
 </head>
 <body>
 	<header class="page-header container">
