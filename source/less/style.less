@@ -1,24 +1,31 @@
 @import "palette.less";
 @import "mixins.less";
 @size: 1rem;
+@pad: @size;
 a {
 	color: @palette-Red-A700;
 	&:hover {
 		color: @palette-Red-A400;
 	}
 }
+
 .avatar {
 	@avatarSize : @size*10;
 	width: @avatarSize;
 	height: @avatarSize;
 	background-color: @palette-Blue-Grey-100;
 	background-size: cover;
-	border: @size/3 dashed @palette-Grey-100;
+	border: @size/3 solid @palette-Blue-Grey-200;
 	border-radius: @avatarSize/2;
 	.transition(all 300ms);
 	&:hover {
-		.scale(1.2);
+		box-shadow: 0 @pad/2 @pad/2 rgba(0,0,0,.1);
 	};
+	img {
+		border-radius: inherit;
+		display: block;
+		width: 100%;
+	}
 }
 .no-list() {
 	padding: 0;
@@ -39,9 +46,7 @@ a {
 			text-decoration: none;
 			background-color: @palette-Blue-Grey-50;
 			.fly {
-				// .scale(1.2);
-				transform: scale(4); 
-				transform: scale(4) translate(-15px,0);
+				// .scale(1.2);\
 				.text {
 					opacity: 1;
 				}
@@ -54,7 +59,7 @@ a {
 			left: 0;
 			margin-right: @size/2;
 			.text {
-				display: block;
+				display: none;
 				position: absolute;
 				right: 0;
 				opacity: 0;
