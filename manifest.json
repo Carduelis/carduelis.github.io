@@ -1,27 +1,27 @@
 {
- "short_name": "Pavel, Front-end Dev",
- "name": "Pavel, Front-end Dev",
+ "short_name": "Pavel, frontender",
+ "name": "Pavel, frontender",
  "description": "My application that connects to the internets",
  "icons": [
 	 {
-	 "src": "128.png",
+	 "src": "assets/icons/128.png",
 	 "sizes": "48x48",
-	 "type": "assets/icons"
+	 "type": "image/png"
 	 },
 	 {
-	 "src": "128.png",
+	 "src": "assets/icons/128.png",
 	 "sizes": "96x96",
-	 "type": "assets/icons"
+	 "type": "image/png"
 	 },
 	 {
-	 "src": "192.png",
+	 "src": "assets/icons/192.png",
 	 "sizes": "192x192",
-	 "type": "assets/icons"
+	 "type": "image/png"
 	 },
 	 {
-	 "src": "256.png",
+	 "src": "assets/icons/256.png",
 	 "sizes": "256x256",
-	 "type": "assets/icons"
+	 "type": "image/png"
 	 }
  ],
  "start_url": "./?utm_source=web_app_manifest",
