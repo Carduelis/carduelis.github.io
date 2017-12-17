@@ -1,0 +1,48 @@
+{
+  "icons": [
+    {
+      "src": "./icon_1024x1024.a7fe987702c70d35070d2ecdd03be845.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    },
+    {
+      "src": "./icon_512x512.521d99bc81637e2fb8576308e693f1a3.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "./icon_384x384.df674982d215d18e12682b08a16d1828.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "./icon_256x256.23276989eb0152e0b83d5de63abf58a3.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "./icon_192x192.15497cc52662dfe1a2aa453c5d38f5bd.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./icon_128x128.39a104ce9575fcc7ebaa90b4b3d81345.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "./icon_96x96.fda4d87899bbdf73ea63a21832734075.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ],
+  "name": "Make concert great again!",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": ".",
+  "publicPath": null,
+  "short_name": "Concert Fly",
+  "description": "Do a concert trip in a few seconds!",
+  "background_color": "#8767CF",
+  "theme_color": "#5890E8"
+}
