@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="theme-color" content="#CFE9FB">
+		<link rel="manifest" href="./manifest.json">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+		<meta name="apple-touch-fullscreen" content="yes">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700&amp;subset=cyrillic" rel="stylesheet">
+    <title>My App</title>
+		<script type="text/javascript">
+		// prevent iOs bouncing
+(function (global) {
+	let startY = 0;
+	let enabled = false;
+	const handleTouchmove = function (evt) {
+		let el = evt.target;
+		while (el !== document.body) {
+			const style = window.getComputedStyle(el);
+			if (!style) {
+				break;
+			}
+			if (el.nodeName === 'INPUT' && el.getAttribute('type') === 'range') {
+				return;
+			}
+			const scrolling = style.getPropertyValue('-webkit-overflow-scrolling');
+			const overflowY = style.getPropertyValue('overflow-y');
+			const height = parseInt(style.getPropertyValue('height'), 10);
+			const isScrollable =
+				scrolling === 'touch' && (overflowY === 'auto' || overflowY === 'scroll');
+			const canScroll = el.scrollHeight > el.offsetHeight;
+			if (isScrollable && canScroll) {
+				const curY = evt.touches ? evt.touches[0].screenY : evt.screenY;
+				const isAtTop = startY <= curY && el.scrollTop === 0;
+				const isAtBottom = startY >= curY && el.scrollHeight - el.scrollTop === height;
+				if (isAtTop || isAtBottom) {
+					evt.preventDefault();
+				}
+				return;
+			}
+			el = el.parentNode;
+		}
+		evt.preventDefault();
+	};
+	const handleTouchstart = function (evt) {
+		startY = evt.touches ? evt.touches[0].screenY : evt.screenY;
+	};
+	const enable = function () {
+		window.addEventListener('touchstart', handleTouchstart, false);
+		window.addEventListener('touchmove', handleTouchmove, false);
+		enabled = true;
+	};
+	const disable = function () {
+		window.removeEventListener('touchstart', handleTouchstart, false);
+		window.removeEventListener('touchmove', handleTouchmove, false);
+		enabled = false;
+	};
+	const isEnabled = function () {
+		return enabled;
+	};
+	const testDiv = document.createElement('div');
+	document.documentElement.appendChild(testDiv);
+	testDiv.style.WebkitOverflowScrolling = 'touch';
+	const scrollSupport =
+		'getComputedStyle' in window &&
+		window.getComputedStyle(testDiv)['-webkit-overflow-scrolling'] === 'touch';
+	document.documentElement.removeChild(testDiv);
+	if (scrollSupport) {
+		enable();
+	}
+	const iNoBounce = { enable, disable, isEnabled };
+	if (typeof module !== 'undefined' && module.exports) {
+		module.exports = iNoBounce;
+	}
+	if (typeof global.define === 'function') {
+		(function (define) {
+			define('iNoBounce', [], () => iNoBounce);
+		}(global.define));
+	} else {
+		global.iNoBounce = iNoBounce;
+	}
+}(this));
+</script>
+  <link href="./main.css?0_77c49e45ef43bbcbe0a8a1c36104db4a" rel="stylesheet"></head>
+  <body>
+      <div id="root"></div>
+  <script type="text/javascript" src="./bundle.js"></script></body>
+</html>
