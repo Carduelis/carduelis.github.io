@@ -36,12 +36,12 @@
       "type": "image/png"
     }
   ],
-  "name": "Pokedex by Pavel",
-  "short_name": "Pokedex",
+  "name": "Logger by Pavel",
+  "short_name": "Logger",
   "orientation": "portrait",
   "display": "standalone",
   "start_url": ".",
-  "description": "Filter and search pokemons!",
+  "description": "See logs!",
   "background_color": "#8767CF",
   "theme_color": "#5890E8"
 }

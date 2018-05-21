@@ -1,8 +1,8 @@
 body {
   font-family: "Courier New", Courier, monospace;
   box-sizing: border-box;
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 @media (max-width: 640px) {
   html {
@@ -15,8 +15,38 @@ body {
 #root,
 .stats,
 .button {
-  background-color: #0a1d2a;
-  color: #fafafa;
+  background-color: #fafafa;
+  color: #0a1d2a;
+}
+#root #root,
+.stats #root,
+.button #root,
+#root .stats,
+.stats .stats,
+.button .stats,
+#root .button,
+.stats .button,
+.button .button {
+  background-color: #fafafa;
+  color: #0a1d2a;
+}
+.dark-theme #root,
+.dark-theme .stats,
+.dark-theme .button {
+  background-color: #fafafa;
+  color: #0a1d2a;
+}
+.dark-theme #root #root,
+.dark-theme .stats #root,
+.dark-theme .button #root,
+.dark-theme #root .stats,
+.dark-theme .stats .stats,
+.dark-theme .button .stats,
+.dark-theme #root .button,
+.dark-theme .stats .button,
+.dark-theme .button .button {
+  background-color: #fafafa;
+  color: #0a1d2a;
 }
 .white-theme #root,
 .white-theme .stats,
@@ -62,6 +92,18 @@ body {
   outline: none;
   box-shadow: 0 0 0 1px;
 }
+.button--pending {
+  animation: ButtonLevitating 1s linear infinite;
+  animation-direction: alternate;
+}
+@keyframes ButtonLevitating {
+  0% {
+    transform: translateY(-5%);
+  }
+  100% {
+    transform: translateY(5%);
+  }
+}
 @keyframes PreloaderSpin {
   0% {
     transform: rotate(0deg);
@@ -70,15 +112,15 @@ body {
     transform: rotate(360deg);
   }
 }
-.preloader-page {
-  min-height: 100vh;
-}
 .preloader--fixed {
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+}
+.preloader--min {
+  transform: scale(0.5);
 }
 .preloader-spin {
   position: absolute;
@@ -91,13 +133,13 @@ body {
   z-index: 2;
   left: 50%;
   border: 2px solid transparent;
-  border-top-color: blueviolet;
+  border-top-color: #0c67a5;
   border-radius: 50%;
   animation: PreloaderSpin 3s linear infinite;
 }
 .preloader-spin:before,
 .preloader-spin:after {
-  content: '';
+  content: "";
   position: absolute;
   display: block;
   border-radius: inherit;
@@ -105,7 +147,7 @@ body {
 }
 .preloader-spin:before {
   animation: PreloaderSpin 1.5s linear infinite;
-  border-top-color: yellowgreen;
+  border-top-color: yellow;
   top: 0.4rem;
   right: 0.4rem;
   left: 0.4rem;
@@ -113,7 +155,7 @@ body {
 }
 .preloader-spin:after {
   animation: PreloaderSpin 2s linear infinite;
-  border-top-color: palegoldenrod;
+  border-top-color: yellowgreen;
   top: 0.8rem;
   right: 0.8rem;
   left: 0.8rem;
@@ -158,6 +200,9 @@ body {
   align-items: baseline;
   position: relative;
 }
+.log:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
 .log-timestamp {
   padding: 0.2rem 0;
   margin-right: 1rem;
@@ -168,7 +213,7 @@ body {
   right: 100%;
   font-size: 0.6em;
   bottom: 100%;
-  opacity: .8;
+  opacity: 0.8;
 }
 .log-severity {
   min-width: 4em;
@@ -206,6 +251,12 @@ body {
 }
 .log:hover .log-message-button {
   background-color: antiquewhite;
+}
+.logs-loader {
+  position: fixed;
+  right: 2rem;
+  top: 2rem;
+  z-index: 20;
 }
 .placeholder {
   display: flex;
