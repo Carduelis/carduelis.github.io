@@ -1,0 +1,47 @@
+{
+  "icons": [
+    {
+      "src": "icon_1024x1024.66dd8495db943ce852491681ac90e1a5.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_512x512.7172c37f5905bdd3b02df0c433102600.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_384x384.aa9771951139ff68d93cdeafb1f1cc2c.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_256x256.795c7dd8af737d704524c906208e7aea.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_192x192.b282f61420fa15bfb0a53b35a372866d.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_128x128.08db698c4bc0156fcd3db5412ae534e0.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_96x96.939c05365a61b6ffa049737c8e7d0e5d.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ],
+  "name": "Кальянная ShishaTime на Бауманской",
+  "short_name": "ShishaTime",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": ".",
+  "description": "Кальянная ShishaTime на Бауманской",
+  "background_color": "#1c060b",
+  "theme_color": "#1c060b"
+}
