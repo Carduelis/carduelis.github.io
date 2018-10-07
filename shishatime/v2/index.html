@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<title>
+		Кальянная ShishaTime на Бауманской
+	</title>
+	<script>
+		var modernBrowser = 'assign' in Object;
+		if (!modernBrowser) {
+			var scriptElement = document.createElement('script');
+
+			scriptElement.async = false;
+			scriptElement.src = 'polyfills.bundle.js';
+			document.head.appendChild(scriptElement);
+		}
+		function initMap() {
+			// The location of Uluru
+			// 55.7716129,37.6810593
+			let shishatime = { lat: 55.7716129, lng: 37.6820593 };
+			// The map, centered at shishatime
+			let map = new google.maps.Map(document.getElementById('map'), {
+				zoom: 16,
+				gestureHandling: 'cooperative',
+				center: shishatime
+			});
+			// The marker, positioned at shishatime
+			let marker = new google.maps.Marker({ position: shishatime, map: map });
+		};
+	</script>
+	<style>
+		html {
+			position: fixed;
+			height: 100%;
+			width: 100%;
+			left: 0;
+			top: 0;
+			right: 0;
+			overflow: hidden;
+			-webkit-overflow-scrolling: touch;
+		}
+
+		body {
+			height: 100vh;
+			overflow: hidden;
+			background-image: radial-gradient( ellipse at top,
+			rgba(8, 129, 216, 0.2),
+			transparent),
+			linear-gradient(25deg, #19150e, #3e2f2a);
+		}
+	</style>
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css" rel="stylesheet">
+<meta name="theme-color" content="#1c060b" /><link rel="manifest" href="manifest.9356eded77eb32d4f1dcf24c99aea1d4.json" /><link href="app.css" rel="stylesheet"></head>
+
+<body>
+	<div class="preloader-page" id="loader">
+		<div class="preloader">
+			<div class="preloader-spin"></div>
+		</div>
+	</div>
+	<div id="root">
+	</div>
+	<div id="map"></div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDliQ6XU1GpcP65NaJHsPgPgapRAbh6Tw&callback=initMap">
+	</script>
+<script type="text/javascript" src="app.bundle.js"></script><script type="text/javascript" src="polyfills.bundle.js"></script></body>
+
+</html>
